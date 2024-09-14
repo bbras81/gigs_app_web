@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-
+import db
+db.main()
 app = Flask(__name__)
 
 
