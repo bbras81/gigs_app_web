@@ -1,3 +1,10 @@
 testb {
     background-color: blue;
 }
+
+.menu-button > *{
+    /* border: 1px dotted red; */
+    display: flex;
+    justify-content: center;
+}
+

@@ -9,7 +9,9 @@ def home():
     return render_template("index.html")
 
 
-
+@app.route("/clients")
+def clients():
+    return render_template("clients.html")
 
 
 
