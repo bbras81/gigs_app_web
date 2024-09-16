@@ -3,29 +3,30 @@
 {% block title %}Clients{% endblock %}
 
 {% block main  %}
-<form action="" class="m-auto w-75">
-  <div class="form-p">
-    <div class="input-group mb-3">
-      <span class="input-group-text span-p" id="basic-addon1">Nome da empresa</span>
-      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text span-p" id="basic-addon1">Morada</span>
-      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text span-p" id="basic-addon1">Código Postal</span>
-      <input type="text" class="form-control" aria-label="Código Postal">
-      <span class="input-group-text">-</span>
-      <input type="text" class="form-control">
-    </div>
-      <div class="input-group">
-        <span class="input-group-text span-p" id="basic-addon1">Contribuinte</span>
-        <input type="number" class="form-control" aria-label="Nif" aria-describedby="basic-addon1">
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" aria-label="email" aria-describedby="basic-addon1">
-      </div>
+
+<section id="input-client">
+  <div class="text-center">
+    <h2> Novo Cliente </h2>
+    <p class="lead">Inserir novo Cliente</p>
   </div>
-</form>
+  <div class="container-md">
+    <div class="row justify-content-center">
+        <form action="">
+          <div class="col-6">
+            <label for="company-name" class="form-label" >Nome da Empresa</label>
+            <input type="text" class="form-control" id="company-name">
+          </div>
+
+          <label for="company-address" class="form-label" >Morada</label>
+          <input type="text" class="form-control" id="company-address">
+
+          <label for="postal-code" class="form-label" >Codigo Postal</label>
+          <input type="text" class="form-control col-6" id="postal-code">
+          <input type="text" class="form-control col-6" id="postal-code">
+        </form>
+    </div>
+  </div>
+
+</section>
 
 {% endblock  %}
