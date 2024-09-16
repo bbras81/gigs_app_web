@@ -3,19 +3,11 @@
     margin: 0px;
 }
 
-.menu-button{
-    
-}
 
-
-.teste > *{
-    border: 1px dotted red;
-}
 
 .menu-button > *{
     display: flex;
     align-items: center;
     justify-content: center;
-    align-items: center;
 }
 
