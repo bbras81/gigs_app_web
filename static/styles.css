@@ -3,29 +3,9 @@
     margin: 0px;
 }
 
-
-.form-p{
-    padding: 20px;
-    background-color: rgb(125, 125, 125);
-}
-.span-p{
-    width: 10rem;
-}
 .menu-button > *{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@media screen and (max-width:768px){
-    .form-p{
-        background-color: antiquewhite  ;
-    }
-    .form-item{
-        display: flex;  
-        flex-direction: column;
-    }
-    .form-item > input{
-        width: 100%;   
-    }
-}

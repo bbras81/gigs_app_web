@@ -1,24 +1,25 @@
-<form action="" class="m-auto">
-    <div class="form-p">
-      <div class="input-group form-item mb-3">
-        <span class="input-group-text span-p" id="basic-addon1">Nome da empresa</span>
-        <input type="text" class="form-control" aria-label="name" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text span-p" id="basic-addon1">Morada</span>
-        <input type="text" class="form-control" aria-label="address" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text span-p" id="basic-addon1">Código Postal</span>
-        <input type="text" class="form-control" aria-label="Código Postal">
-        <span class="input-group-text">-</span>
-        <input type="text" class="form-control">
-      </div>
-        <div class="input-group">
-          <span class="input-group-text span-p" id="basic-addon1">Contribuinte</span>
-          <input type="number" class="form-control" aria-label="Nif" aria-describedby="basic-addon1">
-          <span class="input-group-text" id="basic-addon1">@</span>
-          <input type="text" class="form-control" aria-label="email" aria-describedby="basic-addon1">
+<div class="container m-auto w-100-sm w-75-md w-25-xl ">
+    <div class="">
+      <form action="">
+        <label for="company-name" class="form-label" >Nome da Empresa</label>
+        <input type="text" class="form-control" id="company-name">
+        
+        <label for="company-address" class="form-label" >Morada</label>
+        <input type="text" class="form-control" id="company-address">
+        
+        <label for="postal-code" class="form-label" >Codigo Postal</label>  
+        <div class="d-flex">
+          <input type="text" class="form-control" id="postal-code">
+          <p class="mx-1 my-0 align-content-center" style="font-size: larger;">-</p>
+          <input type="text" class="form-control" id="postal-code">
         </div>
+        <label for="tax-payer" class="form-label" >Nº Contribuinte</label>
+        <input type="number" class="form-control" id="tax-payer">
+
+        <label for="email" class="form-label" >Email</label>
+        <input type="email" class="form-control" id="email">
+        
+        <input class="btn" type="submit" value="Submeter">
+      </form>
     </div>
-  </form>
+  </div>
