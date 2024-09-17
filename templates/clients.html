@@ -6,57 +6,84 @@
 
 <div class="container mt-5">
   <h2>Registo de Empresa</h2>
-  <form>
-    <!-- Nome da Empresa -->
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
     <div class="mb-3">
-      <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
-      <input type="text" class="form-control" id="nomeEmpresa" placeholder="Digite o nome da empresa" required>
+      {{ form.nome_empresa.label(class="form-label") }}
+      {{ form.nome_empresa(class="form-control") }}
+      {% for error in form.nome_empresa.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- NIF -->
     <div class="mb-3">
-      <label for="nif" class="form-label">NIF (Número de Identificação Fiscal)</label>
-      <input type="text" class="form-control" id="nif" placeholder="Digite o NIF da empresa" maxlength="9" pattern="\d{9}" title="NIF deve ter 9 dígitos" required>
+      {{ form.nif.label(class="form-label") }}
+      {{ form.nif(class="form-control") }}
+      {% for error in form.nif.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Endereço -->
     <div class="mb-3">
-      <label for="endereco" class="form-label">Endereço</label>
-      <input type="text" class="form-control" id="endereco" placeholder="Digite o endereço completo" required>
+      {{ form.endereco.label(class="form-label") }}
+      {{ form.endereco(class="form-control") }}
+      {% for error in form.endereco.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Código Postal -->
     <div class="mb-3">
-      <label for="codigoPostal" class="form-label">Código Postal</label>
-      <input type="text" class="form-control" id="codigoPostal" placeholder="Digite o código postal" pattern="\d{4}-\d{3}" title="Formato: 1234-567" required>
+      {{ form.codigo_postal.label(class="form-label") }}
+      {{ form.codigo_postal(class="form-control") }}
+      {% for error in form.codigo_postal.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Localidade -->
     <div class="mb-3">
-      <label for="localidade" class="form-label">Localidade</label>
-      <input type="text" class="form-control" id="localidade" placeholder="Digite a localidade" required>
+      {{ form.localidade.label(class="form-label") }}
+      {{ form.localidade(class="form-control") }}
+      {% for error in form.localidade.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Email -->
     <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="Digite o email" required>
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control") }}
+      {% for error in form.email.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Telefone -->
     <div class="mb-3">
-      <label for="telefone" class="form-label">Telefone</label>
-      <input type="tel" class="form-control" id="telefone" placeholder="Digite o número de telefone" pattern="\d{9}" title="O telefone deve ter 9 dígitos" required>
+      {{ form.telefone.label(class="form-label") }}
+      {{ form.telefone(class="form-control") }}
+      {% for error in form.telefone.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Website (Opcional) -->
     <div class="mb-3">
-      <label for="website" class="form-label">Website (Opcional)</label>
-      <input type="url" class="form-control" id="website" placeholder="https://www.example.com">
+      {{ form.website.label(class="form-label") }}
+      {{ form.website(class="form-control") }}
+      {% for error in form.website.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
     </div>
     
-    <!-- Botão de Enviar -->
-    <button type="submit" class="btn btn-primary">Registar Empresa</button>
+    <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
   </form>
+  
+  <!-- Mensagens de Flash -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="alert alert-{{ messages[0][0] }}">
+    {{ messages[0][1] }}
+  </div>
+  {% endif %}
+  {% endwith %}
 </div>
+
+
 {% endblock  %}
