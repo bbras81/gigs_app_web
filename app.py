@@ -36,7 +36,6 @@ def index():
                       telefone]
                       )
 
-        
         flash('Empresa registada com sucesso!', 'success')
         return redirect("/")
     
