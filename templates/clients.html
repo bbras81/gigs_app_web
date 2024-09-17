@@ -4,61 +4,59 @@
 
 {% block main  %}
 
-<section id="input-client">
-  <div class="text-center">
-    <h2> Novo Cliente </h2>
-    <p class="lead">Inserir novo Cliente</p>
-  </div>
-
-  <div class="container ">
-    <form class="row g-3">
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-      </div>
-    </form>
-  </div>
-
-
-
-  </section>
-
+<div class="container mt-5">
+  <h2>Registo de Empresa</h2>
+  <form>
+    <!-- Nome da Empresa -->
+    <div class="mb-3">
+      <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
+      <input type="text" class="form-control" id="nomeEmpresa" placeholder="Digite o nome da empresa" required>
+    </div>
+    
+    <!-- NIF -->
+    <div class="mb-3">
+      <label for="nif" class="form-label">NIF (Número de Identificação Fiscal)</label>
+      <input type="text" class="form-control" id="nif" placeholder="Digite o NIF da empresa" maxlength="9" pattern="\d{9}" title="NIF deve ter 9 dígitos" required>
+    </div>
+    
+    <!-- Endereço -->
+    <div class="mb-3">
+      <label for="endereco" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="endereco" placeholder="Digite o endereço completo" required>
+    </div>
+    
+    <!-- Código Postal -->
+    <div class="mb-3">
+      <label for="codigoPostal" class="form-label">Código Postal</label>
+      <input type="text" class="form-control" id="codigoPostal" placeholder="Digite o código postal" pattern="\d{4}-\d{3}" title="Formato: 1234-567" required>
+    </div>
+    
+    <!-- Localidade -->
+    <div class="mb-3">
+      <label for="localidade" class="form-label">Localidade</label>
+      <input type="text" class="form-control" id="localidade" placeholder="Digite a localidade" required>
+    </div>
+    
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Digite o email" required>
+    </div>
+    
+    <!-- Telefone -->
+    <div class="mb-3">
+      <label for="telefone" class="form-label">Telefone</label>
+      <input type="tel" class="form-control" id="telefone" placeholder="Digite o número de telefone" pattern="\d{9}" title="O telefone deve ter 9 dígitos" required>
+    </div>
+    
+    <!-- Website (Opcional) -->
+    <div class="mb-3">
+      <label for="website" class="form-label">Website (Opcional)</label>
+      <input type="url" class="form-control" id="website" placeholder="https://www.example.com">
+    </div>
+    
+    <!-- Botão de Enviar -->
+    <button type="submit" class="btn btn-primary">Registar Empresa</button>
+  </form>
+</div>
 {% endblock  %}

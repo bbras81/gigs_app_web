@@ -15,9 +15,12 @@ def main():
     db_execute("""CREATE TABLE IF NOT EXISTS clients(
                id_cliente INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
                nome_empresa TEXT NOT NULL, 
-               morada TEXT,
                nif INTEGER NOT NULL UNIQUE,
+               morada TEXT NOT NULL,
+               cp TEXT NOT NULL,
+               localidade TEXT NOT NULL,
                email TEXT NOT NULL,
+               telefone INTEGER,
                recibo TEXT NOT NULL
             )""")
 
