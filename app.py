@@ -25,6 +25,16 @@ def index():
         email = form.email.data
         telefone = form.telefone.data
         website = form.website.data
+        
+        db.db_execute("INSERT INTO clients (nome_empresa, nif, morada, cp, localidade, email, telefone) VALUES (?, ?, ?, ?, ?, ?, ?) ",
+                      [nome_empresa,
+                      nif,
+                      endereco,
+                      codigo_postal,
+                      localidade,
+                      email,
+                      telefone]
+                      )
 
         
         flash('Empresa registada com sucesso!', 'success')
