@@ -40,6 +40,9 @@ def add_clients():
         return redirect("/")
     return render_template('clients.html', form=form)
 
+
+
+
 @app.route('/view_client', methods=['GET', 'POST'])
 def view_client():
         client_id_get = 1
