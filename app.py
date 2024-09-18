@@ -42,9 +42,10 @@ def add_clients():
 
 @app.route('/view_client', methods=['GET', 'POST'])
 def view_client():
-        client_view = db.db_execute('SELECT * FROM clients WHERE id_cliente = ?', 1)
-        
+        client_id_get = 1
+        client_view = db.db_execute("SELECT * FROM clients WHERE id_cliente = ?", (client_id_get,), fetch_one=True)
         return render_template('client_view.html', client=client_view)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5500, debug=True)
