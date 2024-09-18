@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Detalhes do Cliente{% endblock %}
+
+
+{% block main %}
+
+<h1>Client</h1>
+
+<div class="container my-5">
+    <h2>Detalhes do Cliente</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ client['nome'] }}</h5>
+            <p class="card-text"><strong>NIF:</strong> {{ client['nif'] }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ client['email'] }}</p>
+            <p class="card-text"><strong>Telefone:</strong> {{ client['telefone'] }}</p>
+            <p class="card-text"><strong>Morada:</strong> {{ client['morada'] }}</p>
+            <a href="{{ url_for('edit_client', id=client['id']) }}" class="btn btn-primary">Editar Cliente</a>
+            <a href="{{ url_for('delete_client', id=client['id']) }}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir este cliente?')">Excluir Cliente</a>
+        </div>
+    </div>
+    <a href="{{ url_for('clients_list') }}" class="btn btn-secondary mt-3">Voltar</a>
+</div>
+{% endblock  %}

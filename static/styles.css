@@ -1,0 +1,39 @@
+body {
+  padding-top: 56px;
+}
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding-top: 20px;
+}
+.sidebar .nav-link {
+  color: white;
+}
+.sidebar .nav-link:hover {
+  background-color: #495057;
+}
+.main-content {
+  padding: 20px;
+  margin-left: 250px; /* Sidebar width for larger screens */
+}
+
+/* Ajuste para telas menores (mobile) */
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none; /* Esconde o sidebar no mobile */
+  }
+  .main-content {
+    margin-left: 0; /* Remove o espaço reservado para o sidebar no mobile */
+  }
+}
+
+
+#main-content {
+  margin-left: 250px;
+  padding: 20px;
+}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import Flask, render_template, redirect, url_for, flash, request
 from forms import EmpresaForm
 import db
 
@@ -12,8 +12,8 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/clients', methods=['GET', 'POST'])
-def index():
+@app.route('/add_client', methods=['GET', 'POST'])
+def add_clients():
     form = EmpresaForm()
     if form.validate_on_submit():
         # Processar os dados do formulário
@@ -38,9 +38,12 @@ def index():
 
         flash('Empresa registada com sucesso!', 'success')
         return redirect("/")
-    
     return render_template('clients.html', form=form)
 
+@app.route('/view_client', methods=['GET', 'POST'])
+def view_client():
+        
+        return render_template('client_view.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5500, debug=True)
